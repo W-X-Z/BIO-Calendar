@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0c" />
+  <title>BIO Catalyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 바 -->
+    <header class="top">
+      <div class="brand">BIO Catalyst</div>
+      <div class="view-toggle">
+        <button class="vt active" data-view="feed">피드</button>
+        <button class="vt" data-view="calendar">캘린더</button>
+      </div>
+    </header>
+
+    <!-- 피드 -->
+    <main class="view" id="feedView">
+      <section class="hero">
+        <p class="hero-kicker">✦ 다가오는 바이오 카탈리스트</p>
+        <h1 class="hero-title" id="heroTitle"></h1>
+      </section>
+
+      <nav class="type-tabs" id="typeTabs">
+        <button class="tt active" data-type="ALL">전체</button>
+        <button class="tt" data-type="clinical">임상</button>
+        <button class="tt" data-type="regulatory">규제</button>
+        <button class="tt" data-type="deal">딜·L/O</button>
+        <button class="tt" data-type="conference">학회</button>
+        <button class="tt" data-type="earnings">실적</button>
+      </nav>
+
+      <div id="feedList" class="list"></div>
+    </main>
+
+    <!-- 캘린더 -->
+    <main class="view hidden" id="calendarView">
+      <div class="cal-nav">
+        <button class="cal-arrow" id="prevMonth" aria-label="이전 달">‹</button>
+        <h2 id="monthLabel"></h2>
+        <button class="cal-arrow" id="nextMonth" aria-label="다음 달">›</button>
+      </div>
+      <div class="weekdays"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span class="sat">토</span></div>
+      <div class="cal-grid" id="calGrid"></div>
+      <div class="day-detail">
+        <h3 id="dayDetailTitle">날짜를 선택하세요</h3>
+        <div id="dayDetailList" class="list"></div>
+      </div>
+    </main>
+
+    <!-- 하단 부동 세그먼트(시장) -->
+    <div class="floating-seg" id="countrySeg">
+      <button class="fs active" data-country="ALL">전체</button>
+      <button class="fs" data-country="KR">🇰🇷 국내</button>
+      <button class="fs" data-country="US">🇺🇸 미국</button>
+    </div>
+  </div>
+
+  <!-- 상세 시트 -->
+  <div class="overlay hidden" id="overlay">
+    <div class="sheet" id="sheet">
+      <div class="handle"></div>
+      <div id="sheetBody"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
