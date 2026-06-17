@@ -7,6 +7,12 @@
 > **예정된 카탈리스트**를 모으는 데 초점을 둡니다.
 > 서버 없이 동작하며, 데이터는 1회 수집해 정적 파일(`data/events.json`, `web/data.js`)로 저장합니다.
 
+## 🌐 Live Demo
+
+**https://w-x-z.github.io/BIO-Calendar/**
+
+`main` 브랜치에 push하면 GitHub Actions가 `web/` 폴더를 GitHub Pages로 자동 배포합니다.
+
 ## 📁 구조
 
 ```
